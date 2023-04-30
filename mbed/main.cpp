@@ -10,8 +10,8 @@ RawSerial pi(p9, p10);
 
 DigitalOut solenoid(p30);
 
-//solenoid mutex
-Mutex solenoid_mutex;
+volatile bool unlock = false;
+
 
 
 //might need to mutex these as they are both serial, but it might be fine because reading
@@ -19,7 +19,7 @@ void bt_recv() {
     while(bt.readable()) {
         char btchar = bt.getc();
         if (false) {
-            unlock();
+            unlock = true;
         }
     }
 }
@@ -29,18 +29,13 @@ void pi_recv() {
     while (pi.readable()) {
         char pichar = pi.getc();
         if (false) {
-            unlock();
+            unlock = true;
         }
     }
 }
 
 void unlock() {
-    solenoid_mutex.lock();
-    solenoid = 1;
-    Thread::wait(5000);
-    solenoid = 0;
-    Thread::wait(5000); //forced solenoid cooldown so it doesn't burn out
-    solenoid_mutex.unlock();
+    
 }
 
 int main() {
@@ -54,6 +49,14 @@ int main() {
 
     
     while(1) {
-        Thread::wait(1000);
+        if (unlock) {
+            solenoid = 1;
+            Thread::wait(5000);
+            solenoid = 0;
+            unlock = false;
+            Thread::wait(5000); //forced solenoid cooldown so it doesn't burn out
+        } else {
+            Thread::wait(500);
+        }
     }
 }
