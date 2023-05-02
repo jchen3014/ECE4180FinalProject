@@ -77,10 +77,6 @@ Use the `BLANK_README.md` to get started.
 
 <!-- GETTING STARTED -->
 ## Getting Started
-
-This is an example of how you may give instructions on setting up your project locally.
-To get a local copy up and running follow these simple example steps.
-
 ### Preparing Raspberry Pi
 
 1. We first have to make changes to the Raspberry Pi configurations. By default, the SPI (Serial Peripheral Interface) is disabled, so open the raspi-config tool, using the following command.
