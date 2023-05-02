@@ -56,20 +56,21 @@ Use the `BLANK_README.md` to get started.
 
 ### Built With
 
-* Raspberry Pi Zero W
-* mBed LPC1768
-* Solenoid Electric Lock
-* Mifare RC522 RFID Reader
-* 9V POWER SUPPLY
-* Raspberry Pi Screen
-* Speaker - PCB Mount
-* Tri-color LED
-* uLCD-144-G2
-* BJT transistor
-* Relay SPDT
-* Adafruit BLE
-* USB Mini-B Breakout
-
+* mbed LPC1768​
+* Raspberry Pi (Zero W)​
+* MFRC-522 RFID Reader​
+* Bluefruit LE UART Friend​
+* MPR121 Capacitive Touch Keypad​
+* Adafruit 9V-12V Lock-Style Solenoid​
+* 5V Relay​
+* BJT​
+* Diode​
+* 1k Resistor​
+* 10k Resistor​
+* 2x 4k7 Resistor​
+* 9V Power Supply​
+* 5V Power Supply​
+* Connecting Wires​
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
