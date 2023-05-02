@@ -25,39 +25,25 @@ server_socket.listen(1)
 
 ser = serial.Serial('/dev/ttyS0', 9600, timeout=1)
 
-def listen_for_mbed():
+def listen_for_input():
     while True:
-        # Listen for incoming data
         if ser.in_waiting > 0:
             data = ser.readline().decode()
             print(f'Received: {data}')
-        text = "placeholder"
-        id, text = reader.read()
-        text=text.strip()
-        if text == "hi":
-            ser.write("1\n".encode())
-            update_log_display("UNLOCKED USING BLUETOOTH!")
-        else:
-            print("u no allowed")
-            ser.write("intruder alert\n".encode())
-            update_log_display("BLUETOOTH DENIED!")
-        time.sleep(5)
+            if data == "keypad_unlock\n":
+                update_log_display("UNLOCKED USING KEYPAD")
+            elif data == "bluetooth_unlock\n":
+                update_log_display("UNLOCKED USING BLUETOOTH")
+            else:
+                update_log_display("ACCESS DENIED!")
 
 
-        text_to_send = input()+'\n'
-        ser.write(text_to_send.encode())  
-        #ser.write(text_to_send.encode()
-        time.sleep(5)
-
-input_thread2 = threading.Thread(target=listen_for_mbed, daemon=True)
+input_thread2 = threading.Thread(target=listen_for_input, daemon=True)
 input_thread2.start()
+
 
 def listen_for_input():
     while True:
-        # Listen for incoming data
-        if ser.in_waiting > 0:
-            data = ser.readline().decode()
-            print(f'Received: {data}')
         text = "placeholder"
         id, text = reader.read()
         text=text.strip()
@@ -77,7 +63,7 @@ def on_closing():
     sock.close()
     root.destroy()
     ser.close()
-    
+
 # Define the method to update the log display
 def update_log_display(log_str):
     # Insert the new log message at the top of the list
@@ -118,6 +104,7 @@ def start_server_loop():
                 #log_str = f'Received from {addr}: {data.decode()}'
                 #print(log_str)
                 update_log_display("UNLOCKED FROM LAPTOP!")
+                ser.write("1\n".encode())
 
 # Set constants
 WINDOW_WIDTH = 800
@@ -148,3 +135,4 @@ except KeyboardInterrupt:
     on_closing()
 # Close the server socket
 server_socket.close()
+
