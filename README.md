@@ -125,7 +125,7 @@ sudo pip3 install mfrc522
 <img src="images/block_diagram.png" width="600">
 <img src="images/wiring_diagram.png" width="600">
 
-##Demonstration
+## Demonstration
 A video demonstration can be found here: https://youtu.be/8DHuXTUlJBs
 <!-- USAGE EXAMPLES -->
 ## Usage
