@@ -1,4 +1,4 @@
-*** Team Members
+# Team Members
 * Connor Talley (Section B)
 * Jingsong Guo (Section B)
 * Addison Elliott (Section A)
