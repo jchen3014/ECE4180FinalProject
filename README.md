@@ -83,30 +83,42 @@ To get a local copy up and running follow these simple example steps.
 
 ### Preparing Raspberry Pi
 
-Before we begin the process of utilizing the RFID RC522 on our Raspberry Pi, we will first have to make changes to its configuration. By default, the Raspberry Pi has the SPI (Serial Peripheral Interface) disabled, which is a bit of a problem as that is what our RFID reader circuit runs through.
+1. We first have to make changes to the Raspberry Pi configurations. By default, the SPI (Serial Peripheral Interface) is disabled, so open the raspi-config tool, using the following command.
+```
+sudo raspi-config
+```
+2. Use keyboard arrow keys to select **“5 Interfacing Options“** and press press Enter.
+3. Use keyboard arrow keys to select **“P4 SPI“** and press Enter.
+4. Select Yes with your arrow keys to enable the SPI Interface and press Enter.
+5. Restart the Pi by getting back to the terminal by pressing Enter, then ESC, and the following command.
+```
+sudo reboot
+```
+6. Once rebooted, check if spi_bcm2835 is listed when following command is run.
+```
+lsmod | grep spi
+```
+   
 
-Don’t worry though as it is fairly simple to re-enable this interface, just follow our steps below to configure your Raspberry Pi and Raspbian to utilize the SPI interface.
+### Installing Python and Libraries on Pi
 
-1. Let’s begin by first opening the raspi-config tool, and we can do this by opening the terminal and running the following command.
-  ```
-
-### Installation
-
-_Below is an example of how you can instruct your audience on installing and setting up your app. This template doesn't rely on any external dependencies or services._
-
-1. Get a free API Key at [https://example.com](https://example.com)
-2. Clone the repo
-   ```sh
-   git clone https://github.com/your_username_/Project-Name.git
-   ```
-3. Install NPM packages
-   ```sh
-   npm install
-   ```
-4. Enter your API in `config.js`
-   ```js
-   const API_KEY = 'ENTER YOUR API';
-   ```
+1. Check if Pi is up to date.
+```
+sudo apt update
+sudo apt upgrade
+```
+2. Install all required packages for RFID reader.
+```
+sudo apt install python3-dev python3-pip
+```
+3. Install the spidev Python library that handles interactions with the SPI. Note that sudo is used to ensure the package is installed so that all users can utilize it and not just the current user.
+```
+sudo pip3 install spidev
+```
+4. Install the MFRC522 library.
+```
+sudo pip3 install mfrc522
+```
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
