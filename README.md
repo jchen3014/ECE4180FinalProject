@@ -40,7 +40,7 @@
 ![project pic](/images/project.jpeg)
 
 
-The Smart lock module is a solenoid-based lock  that can be controlled by a variety of sources
+The Smart lock module is a solenoid-based lock that can be controlled by a variety of sources and unlock attempts are displayed on the screen.
 
 Main components of the module:
 * Mbed directly controls solenoid driver circuit and two authentication methods
@@ -140,7 +140,7 @@ sudo python3 unlock.py
 ```
 6. Run the following command on your computer to set up the TCP client.
 ```
-sudo python3 unlock.py
+sudo python3 GUI.py
 ```
 7. A window on the Pi monitor will display the most recent unlock attempts. You can now attempt to unlock the lock using the various methods mentioned.
 
