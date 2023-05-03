@@ -73,6 +73,7 @@ Main components of the module:
 * 9V Power Supply​
 * 5V Power Supply​
 * Connecting Wires​
+* Raspberry Pi Monior 10.1"
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
@@ -142,7 +143,7 @@ The project can be integrated for indoor environments for additional door-lockin
 
 ## Future Upgrades
 
-Additinoal support hardware can be added, such as a camera system that takes a picture of the person accessing the lock via physical contact.
+Additional support hardware can be added, such as a camera system that takes a picture of the person accessing the lock via physical contact.
 
 Additional security encryption of the user ID, passcodes, and TCP connection can be added for expanded outdoor and commercial usage.
 
