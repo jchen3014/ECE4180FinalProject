@@ -4,38 +4,8 @@
 * Addison Elliott (Section A)
 * Jackie Chen (Section A)
 
-
-
-<!-- TABLE OF CONTENTS -->
-<details>
-  <summary>Table of Contents</summary>
-  <ol>
-    <li>
-      <a href="#about-the-project">About The Project</a>
-      <ul>
-        <li><a href="#built-with">Built With</a></li>
-      </ul>
-    </li>
-    <li>
-      <a href="#getting-started">Getting Started</a>
-      <ul>
-        <li><a href="#prerequisites">Prerequisites</a></li>
-        <li><a href="#installation">Installation</a></li>
-      </ul>
-    </li>
-    <li><a href="#usage">Usage</a></li>
-    <li><a href="#roadmap">Roadmap</a></li>
-    <li><a href="#contributing">Contributing</as</li>
-    <li><a href="#license">License</a></li>
-    <li><a href="#contact">Contact</a></li>
-    <li><a href="#acknowledgments">Acknowledgmests</a></li>
-  </ol>
-</details>
-
-
-
 <!-- ABOUT THE PROJECT -->
-## About The Project: Smart Lock Module
+# About The Project: Smart Lock Module
 
 ![project pic](/images/project.jpeg)
 
@@ -75,18 +45,14 @@ Main components of the module:
 * Connecting Wires​
 * Raspberry Pi Monior 10.1"
 
-<p align="right">(<a href="#readme-top">back to top</a>)</p>
-
-
-
 <!-- GETTING STARTED -->
 ## Getting Started
 ### Preparing Mbed
 
-1. Open Keil Studio, create a project, and load the code files in the mbed folder
-2. Connect all peripherals according to the wiring diagram
-3. Connect the additional power sources for the solenoid and bluetooth
-4. Make sure the mbed is sharing the same ground with Raspberry Pi
+1. Open Keil Studio, create a project, and load the code files in the mbed folder.
+2. Connect all peripherals according to the wiring diagram.
+3. Connect the additional power sources for the solenoid and bluetooth.
+4. Make sure the mbed is sharing the same ground with Raspberry Pi.
 
 ### Preparing Raspberry Pi
 
@@ -144,8 +110,6 @@ sudo python3 GUI.py
 ```
 7. A window on the Pi monitor will display the most recent unlock attempts. You can now attempt to unlock the lock using the various methods mentioned.
 
-<p align="right">(<a href="#readme-top">back to top</a>)</p>
-
 
 ## Connections and Wiring
 <img src="images/block_diagram.png" width="600">
@@ -156,13 +120,10 @@ sudo python3 GUI.py
 <!-- USAGE EXAMPLES -->
 ## Usage
 
-The project can be integrated for indoor environments for additional door-locking controls. The keypad and the RFID can be part of the lock hardware on the door, which will control the lock via physical contact. TCP and bluetooth provides remote control capabilities from within the same house or in remote locations. The embedded control hardware can be stationed in the room behind the locked door, where the recorded log file can be easily access.
+The project can be integrated for indoor environments for additional door-locking controls. The keypad and the RFID can be part of the lock hardware on the door, which will control the lock via physical contact. TCP and bluetooth provides remote control capabilities from within the same house or in remote locations. The embedded control hardware can be stationed in the room behind the locked door, where the recorded log file can be easily accessed.
 
 ## Future Upgrades
 
 Additional support hardware can be added, such as a camera system that takes a picture of the person accessing the lock via physical contact.
 
 Additional security encryption of the user ID, passcodes, and TCP connection can be added for expanded outdoor and commercial usage.
-
-
-<p align="right">(<a href="#readme-top">back to top</a>)</p>
