@@ -138,8 +138,13 @@ A video demonstration can be found here: https://youtu.be/8DHuXTUlJBs
 <!-- USAGE EXAMPLES -->
 ## Usage
 
-Use this space to show useful examples of how a project can be used. Additional screenshots, code examples and demos work well in this space. You may also link to more resources.
+The project can be integrated for indoor environments for additional door-locking controls. The keypad and the RFID can be part of the lock hardware on the door, which will control the lock via physical contact. TCP and bluetooth provides remote control capabilities from within the same house or in remote locations. The embedded control hardware can be stationed in the room behind the locked door, where the recorded log file can be easily access.
 
-_For more examples, please refer to the [Documentation](https://example.com)_
+## Future Upgrades
+
+Additinoal support hardware can be added, such as a camera system that takes a picture of the person accessing the lock via physical contact.
+
+Additional security encryption of the user ID, passcodes, and TCP connection can be added for expanded outdoor and commercial usage.
+
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
