@@ -25,33 +25,34 @@
     </li>
     <li><a href="#usage">Usage</a></li>
     <li><a href="#roadmap">Roadmap</a></li>
-    <li><a href="#contributing">Contributing</a></li>
+    <li><a href="#contributing">Contributing</as</li>
     <li><a href="#license">License</a></li>
     <li><a href="#contact">Contact</a></li>
-    <li><a href="#acknowledgments">Acknowledgments</a></li>
+    <li><a href="#acknowledgments">Acknowledgmests</a></li>
   </ol>
 </details>
 
 
 
 <!-- ABOUT THE PROJECT -->
-## About The Project
+## About The Project: Smart Lock Module
 
 ![project pic](/images/project.jpeg)
 
 
-There are many great README templates available on GitHub; however, I didn't find one that really suited my needs so I created this enhanced one. I want to create a README template so amazing that it'll be the last one you ever need -- I think this is it.
+The Smart lock module is a solenoid-based lock  that can be controlled by a variety of sources
 
-Here's why:
-* Your time should be focused on creating something amazing. A project that solves a problem and helps others
-* You shouldn't be doing the same tasks over and over like creating a README from scratch
-* You should implement DRY principles to the rest of your life :smile:
+Main components of the module:
+* Mbed directly controls solenoid driver circuit and two authentication methods
+    * Password protected bluetooth connection that controls the lock
+    * Keycode-based entry controlled by touch keypad via I2C 
+* Raspberry Pi communicates with mbed for additional peripheral control of the lock
+    * Recieves TCP socket unlock commands
+    * Manages a RFID reader and records user database
+    * Keeps a local log file of all recorded unlock methods and user IDs and displays on GUI
+* Solenoid-based lock can be activated for 5 seconds before returning to locked state
+* Mbed and Rasperry Pi communicates via Serial UART
 
-Of course, no one template will serve all projects since your needs may be different. So I'll be adding more in the near future. You may also suggest changes by forking this repo and creating a pull request or opening an issue. Thanks to all the people have contributed to expanding this template!
-
-Use the `BLANK_README.md` to get started.
-
-<p align="right">(<a href="#readme-top">back to top</a>)</p>
 
 
 
@@ -79,6 +80,13 @@ Use the `BLANK_README.md` to get started.
 
 <!-- GETTING STARTED -->
 ## Getting Started
+### Preparing Mbed
+
+1. Open Keil Studio, create a project, and load the code files in the mbed folder
+2. Connect all peripherals according to the wiring diagram
+3. Connect the additional power sources for the solenoid and bluetooth
+4. Make sure the mbed is sharing the same ground with Raspberry Pi
+
 ### Preparing Raspberry Pi
 
 1. We first have to make changes to the Raspberry Pi configurations. By default, the SPI (Serial Peripheral Interface) is disabled, so open the raspi-config tool, using the following command.
