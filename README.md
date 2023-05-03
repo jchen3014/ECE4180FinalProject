@@ -105,8 +105,7 @@ sudo reboot
 ```
 lsmod | grep spi
 ```
-   
-
+  
 ### Installing Python and Libraries on Pi
 
 1. Check if Pi is up to date.
@@ -127,6 +126,24 @@ sudo pip3 install spidev
 sudo pip3 install mfrc522
 ```
 
+### Running code on Pi
+1. Move the write.py and unlock.py files into the Pi's directory.
+2. Move the GUI.py file to your computer's directory.
+3. To write to an RFID fob or card, open terminal on the Pi and run the following.
+```
+sudo python3 write.py
+```
+4. Enter what you want to input onto the RFID device and place the RFID device next to the scanner until the data finsihed writing.
+5. Now, run the following command on the Pi to set up the TCP server.
+```
+sudo python3 unlock.py
+```
+6. Run the following command on your computer to set up the TCP client.
+```
+sudo python3 unlock.py
+```
+7. A window on the Pi monitor will display the most recent unlock attempts. You can now attempt to unlock the lock using the various methods mentioned.
+
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
 
@@ -135,7 +152,7 @@ sudo pip3 install mfrc522
 <img src="images/wiring_diagram.png" width="600">
 
 ## Demonstration
-A video demonstration can be found here: https://youtu.be/8DHuXTUlJBs
+[![Alt text](https://img.youtube.com/vi/8DHuXTUlJBs/0.jpg)](https://www.youtube.com/watch?v=8DHuXTUlJBs)
 <!-- USAGE EXAMPLES -->
 ## Usage
 
